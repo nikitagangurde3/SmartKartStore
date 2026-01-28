@@ -1,0 +1,91 @@
+### ECOMMERCE API TEST REQUESTS ###
+
+# Base URL Configuration
+@baseUrl = https://localhost:5001
+# If using HTTP instead of HTTPS:
+# @baseUrl = http://localhost:5000
+
+# JWT Token storage
+@token = {{login.response.body.token}}
+
+## ==================== AUTHENTICATION ====================
+
+### Register a new user
+# @name register
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123",
+  "name": "John Doe"
+}
+
+### Login and get JWT token
+# @name login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123"
+}
+
+## ==================== PRODUCTS ====================
+
+### Get all products (public)
+GET {{baseUrl}}/api/products
+Accept: application/json
+
+### Get product by ID
+GET {{baseUrl}}/api/products/1
+Accept: application/json
+
+### Create product (Admin only - requires token)
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "iPhone 15 Pro",
+  "description": "Latest iPhone with A17 Pro chip",
+  "price": 999.99,
+  "categoryId": 1,
+  "brand": "Apple",
+  "stock": 50,
+  "specifications": "{\"display\":\"6.1-inch\",\"ram\":\"8GB\",\"storage\":\"256GB\"}"
+}
+
+## ==================== PRODUCT COMPARISON ====================
+
+### Compare two products
+POST {{baseUrl}}/api/comparison/compare
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "product1Id": 1,
+  "product2Id": 2
+}
+
+### Get comparison history
+GET {{baseUrl}}/api/comparison/history
+Authorization: Bearer {{token}}
+
+## ==================== TEST ENDPOINTS ====================
+
+### Health check
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Swagger UI
+GET {{baseUrl}}/swagger
+Accept: text/html
+
+### Swagger JSON
+GET {{baseUrl}}/swagger/v1/swagger.json
+Accept: application/json
+
+### Simple test endpoint
+GET {{baseUrl}}/api/test
+Accept: application/json
