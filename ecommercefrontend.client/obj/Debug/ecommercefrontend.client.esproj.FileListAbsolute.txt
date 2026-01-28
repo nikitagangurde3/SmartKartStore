@@ -1,0 +1,1 @@
+G:\ECommerceFrontEnd\ecommercefrontend.client\obj\Debug\ecommercefrontend.client.esproj.CoreCompileInputs.cache

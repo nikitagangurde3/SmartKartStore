@@ -1,0 +1,1046 @@
+/* App.css - Clean & Consolidated */
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #8B5CF6;
+    --accent-color: #10B981;
+    --dark-color: #1F2937;
+    --light-color: #F9FAFB;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Layout Components */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Auth Pages */
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+/* Navigation */
+.navbar {
+    padding: 0.75rem 0;
+    background-color: #343a40 !important;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+    .nav-link:hover {
+        color: var(--primary-color) !important;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .search-bar .input-group {
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .search-bar input {
+        border: none;
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .search-bar button {
+        padding: 15px 30px;
+        border: none;
+        background: linear-gradient(135deg, var(--accent-color), #34D399);
+    }
+
+        .search-bar button:hover {
+            background: linear-gradient(135deg, #34D399, var(--accent-color));
+        }
+
+/* Cards */
+.card {
+    border-radius: var(--border-radius);
+    border: 1px solid #E5E7EB;
+    transition: var(--transition);
+    width: 100%;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow);
+    }
+
+.product-card {
+    height: 100%;
+}
+
+.product-image {
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.category-card {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid #E5E7EB;
+}
+
+    .category-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-10px);
+    }
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    }
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+/* Forms */
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+    .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+    }
+
+/* Tables */
+.table {
+    width: 100%;
+}
+
+.table-admin {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table-admin thead {
+        background-color: #f8f9fa;
+    }
+
+    .table-admin tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+/* Admin Layout */
+.admin-layout {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.admin-navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+}
+
+    .admin-sidebar .offcanvas-header {
+        background-color: #34495e;
+        color: white;
+        border-bottom: 1px solid #3d566e;
+    }
+
+    .admin-sidebar .offcanvas-title {
+        color: white;
+    }
+
+.admin-nav-link {
+    color: #bdc3c7 !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+    .admin-nav-link:hover {
+        color: white !important;
+        background-color: #34495e;
+        border-left-color: #3498db;
+    }
+
+    .admin-nav-link.active {
+        color: white !important;
+        background-color: #34495e;
+        border-left-color: #3498db;
+        font-weight: 500;
+    }
+
+.admin-nav-icon {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.admin-content {
+    padding: 20px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .admin-sidebar {
+        position: fixed;
+        top: 56px;
+        height: calc(100vh - 56px);
+    }
+
+    .admin-content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+/* Search Modal */
+.search-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.search-modal .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.hover-result:hover {
+    background-color: #e7f1ff !important;
+    transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.special-offer-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .search-bar input {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .search-bar button {
+        padding: 12px 20px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .auth-page {
+        padding: 10px;
+    }
+
+    .admin-content {
+        padding: 15px;
+    }
+}
+
+/* Utility Classes */
+.min-vh-100 {
+    min-height: 100vh !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Fix for Bootstrap row/col */
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto,
+.col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2,
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1,
+.col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8,
+.col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4,
+.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Fix for padding/margin issues */
+.p-0 {
+    padding: 0 !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+/* Chatbot positioning */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Add these styles to fix Home page layout */
+
+/* Fix for Bootstrap container width */
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Ensure rows take full width */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+}
+
+/* Fix for columns */
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto,
+.col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2,
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1,
+.col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8,
+.col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4,
+.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 auto;
+}
+
+/* Home page specific fixes */
+.home-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    width: 100%;
+    margin: 0;
+    padding: 60px 0;
+}
+
+.hero-carousel {
+    width: 100%;
+    height: 300px;
+}
+
+    .hero-carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Ensure all content is visible */
+.main-content {
+    width: 100%;
+    overflow: visible;
+}
+
+/* Fix for Bootstrap modal backdrop */
+.modal-backdrop {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Fix for navbar dropdown */
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-carousel {
+        height: 200px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+/* Add these footer styles to your App.css */
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%) !important;
+    margin-top: auto;
+}
+
+    .footer a {
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .footer a:hover {
+            color: var(--primary-color) !important;
+            padding-left: 5px;
+        }
+
+    .footer ul li {
+        padding: 5px 0;
+    }
+
+    .footer .input-group .form-control:focus {
+        box-shadow: none;
+        border-color: #ffc107;
+    }
+
+    .footer .btn-warning {
+        background: linear-gradient(135deg, #ffc107, #ff9800);
+        border: none;
+        font-weight: 600;
+    }
+
+        .footer .btn-warning:hover {
+            background: linear-gradient(135deg, #ff9800, #ffc107);
+            transform: translateY(-2px);
+        }
+
+    /* Social Media Icons */
+    .footer .btn-outline-light:hover {
+        background-color: white;
+        color: #2c3e50;
+    }
+
+    /* Payment Icons */
+    .footer .fa-cc-visa:hover {
+        color: #1a1f71 !important;
+    }
+
+    .footer .fa-cc-mastercard:hover {
+        color: #eb001b !important;
+    }
+
+    .footer .fa-cc-paypal:hover {
+        color: #003087 !important;
+    }
+
+    .footer .fa-cc-apple-pay:hover {
+        color: #000 !important;
+    }
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+
+        .footer .d-flex {
+            justify-content: center;
+        }
+
+        .footer ul li {
+            text-align: center;
+        }
+
+        .footer .input-group {
+            flex-direction: column;
+        }
+
+            .footer .input-group .form-control {
+                border-radius: 8px 8px 0 0 !important;
+                margin-bottom: -1px;
+            }
+
+            .footer .input-group .btn {
+                border-radius: 0 0 8px 8px !important;
+                width: 100%;
+            }
+}
+/* Layout Styles */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Ensure footer stays at bottom */
+.mt-auto {
+    margin-top: auto !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+/* Special Offer Card Animation */
+.special-offer-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+    .special-offer-shimmer::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 20%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(30deg);
+        animation: shimmer 3s infinite;
+    }
+
+@keyframes shimmer {
+    0% {
+        left: -60%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+/* Card hover effects */
+.hover-shadow {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .hover-shadow:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+
+/* Text colors */
+.text-purple {
+    color: #8B5CF6;
+}
+
+/* Trust badges */
+.trust-badge {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+    .trust-badge:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+/* Why Choose Us cards */
+.why-choose-card {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+    .why-choose-card:hover {
+        border-color: #4F46E5;
+        background-color: #f8f9ff;
+    }
+
+/* Gradient backgrounds */
+.gradient-bg-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-warning {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.gradient-bg-success {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .special-offer-card .display-4 {
+        font-size: 2rem;
+    }
+
+    .why-choose-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Counters animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter-item {
+    animation: countUp 1s ease-out;
+}
+/* Add to your App.css */
+
+/* Fix for text visibility */
+.text-dark {
+    color: #212529 !important;
+}
+
+/* Ensure all card titles are dark */
+.card-title {
+    color: #212529 !important;
+}
+
+/* Fix for special offer card */
+.special-offer-card .display-4 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.special-offer-card .lead {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Darker gradient for better text visibility */
+.bg-gradient {
+    background: linear-gradient(135deg, #d35400 0%, #c0392b 100%) !important;
+}
+
+/* Category card text */
+.category-card .card-title {
+    color: #2c3e50 !important;
+    font-weight: 600;
+}
+
+/* Why choose us cards */
+.why-choose-card .card-title {
+    color: #2c3e50 !important;
+    font-weight: 600;
+}
+
+/* Trust badges */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+    .bg-light h5 {
+        color: #2c3e50 !important;
+    }
+
+/* Ensure all text in white backgrounds is dark */
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
+.container p:not(.text-white, .text-muted, .text-light) {
+    color: #212529 !important;
+}
+
+/* Hero section text remains white */
+.hero-section h1,
+.hero-section p {
+    color: white !important;
+}
+
+/* Special offer text remains white */
+.special-offer-card h3,
+.special-offer-card p {
+    color: white !important;
+}
+
+/* =========================== */
+/* Registration Page Fixes */
+/* =========================== */
+
+/* Fix for modal backdrop issues */
+.modal-backdrop.fade.show {
+    display: none !important;
+}
+
+/* Ensure auth pages have proper pointer events */
+.auth-page {
+    pointer-events: auto !important;
+}
+
+    .auth-page * {
+        pointer-events: auto !important;
+    }
+
+/* Remove any overlay blocking clicks */
+body:not(.modal-open) .modal-backdrop {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Fix for Bootstrap modal conflicts */
+.fade:not(.show) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Ensure body is scrollable after registration */
+body {
+    overflow: auto !important;
+    position: static !important;
+    padding-right: 0 !important;
+}
+
+/* Fix for any fixed position elements blocking clicks */
+[style*="position: fixed"]:not(.navbar):not(.chatbot-container) {
+    z-index: auto !important;
+}
+
+/* Force pointer events on all interactive elements */
+button, a, input, select, textarea, [role="button"] {
+    pointer-events: auto !important;
+}
+
+/* Remove any invisible overlays */
+.overlay-blocker {
+    display: none !important;
+}
+
+/* Fix for registration success page */
+.text-center .card {
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+/* =========================== */
+/* Emergency Click Fix */
+/* =========================== */
+.click-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 999999;
+    pointer-events: none;
+}
+
+/* =========================== */
+/* Force Remove Modal Styles */
+/* =========================== */
+.modal-open {
+    overflow: hidden;
+}
+
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+/* Clear any inline styles that block clicks */
+[style*="pointer-events: none"]:not(.modal-backdrop):not(.modal) {
+    pointer-events: auto !important;
+}
+
+/* =========================== */
+/* Registration Specific Fixes */
+/* =========================== */
+.auth-page .container {
+    position: relative;
+    z-index: 2;
+}
+
+.auth-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    z-index: -1;
+}
+
+/* Remove any pseudo-elements that might block */
+.auth-page::after {
+    display: none !important;
+}
